@@ -31,6 +31,7 @@ class App extends Component {
     const monitors = monitorData.monitors;
     const specialtyData = require("./assets/consoles/specialties.json");
     const specialties = specialtyData.specialties;
+
     const usersPick = item => {
       const picks = this.state.userPicks.slice();
       picks.push(item.name);
