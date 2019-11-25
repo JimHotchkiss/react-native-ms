@@ -13,51 +13,36 @@ import { Header } from "react-native-elements";
 
 class App extends Component {
   constructor() {
+    // Pulling initial data from local api
+    const ccuData = require("./assets/consoles/ccus.json");
+    const cameras = ccuData.cameras;
+
     super();
     this.state = {
-      consoles: [
-        { id: "1688", name: "1688", stateObject: "ccus" },
-        { id: "1588", name: "1588", stateObject: "ccus" },
-        { id: "PrecisionAC", name: "Precision AC", stateObject: "ccus" },
-        { id: "1488", name: "1488", stateObject: "ccus" },
-        { id: "1288", name: "1288", stateObject: "ccus" },
-        { id: "1188", name: "1188", stateObject: "ccus" }
-      ],
+      consoles: cameras,
       userPicks: [],
       showSettings: false
     };
   }
 
   render() {
-    const usersPick = items => {
+    // data - monitors and specialties
+    const monitorData = require("./assets/consoles/monitors.json");
+    const monitors = monitorData.monitors;
+    const specialtyData = require("./assets/consoles/specialties.json");
+    const specialties = specialtyData.specialties;
+    const usersPick = item => {
       const picks = this.state.userPicks.slice();
-      picks.push(items.name);
+      picks.push(item.name);
       // Per documentation, create a callback function to update state synchronously
       this.setState({ userPicks: picks }, () => {
         return this.state.userPicks;
       });
-      if (items.stateObject == "ccus") {
+      if (item.stateObject == "ccus") {
+        this.setState({ consoles: monitors });
+      } else if (item.stateObject === "monitors") {
         this.setState({
-          consoles: [
-            { id: "4K", name: "4K", stateObject: "monitors" },
-            { id: "VisioPro", name: "VisionPro", stateObject: "monitors" },
-            { id: "VisionElect", name: "VisionElect", stateObject: "monitors" }
-          ]
-        });
-      } else if (items.stateObject === "monitors") {
-        this.setState({
-          consoles: [
-            { id: "LapA", name: "Lap A", stateObject: "specialties" },
-            { id: "LapB", name: "Lap B", stateObject: "specialties" },
-            { id: "sdf", name: "Lap A", stateObject: "specialties" },
-            { id: "lkj", name: "Lap B", stateObject: "specialties" },
-            { id: "234", name: "Lap A", stateObject: "specialties" },
-            { id: "kro", name: "Lap B", stateObject: "specialties" },
-            { id: "mwe", name: "Lap A", stateObject: "specialties" },
-            { id: "oki", name: "Lap B", stateObject: "specialties" },
-            { id: "xnms", name: "Lap A", stateObject: "specialties" },
-            { id: "pli", name: "Lap B", stateObject: "specialties" }
-          ]
+          consoles: specialties
         });
       } else {
         this.setState({ showSettings: true });

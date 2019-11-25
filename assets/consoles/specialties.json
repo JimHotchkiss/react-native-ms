@@ -1,0 +1,14 @@
+{
+  "specialties": [
+    { "id": "LapA", "name": "Lap A", "stateObject": "specialties" },
+    { "id": "LapB", "name": "Lap B", "stateObject": "specialties" },
+    { "id": "sdf", "name": "Lap A", "stateObject": "specialties" },
+    { "id": "lkj", "name": "Lap B", "stateObject": "specialties" },
+    { "id": "234", "name": "Lap A", "stateObject": "specialties" },
+    { "id": "kro", "name": "Lap B", "stateObject": "specialties" },
+    { "id": "mwe", "name": "Lap A", "stateObject": "specialties" },
+    { "id": "oki", "name": "Lap B", "stateObject": "specialties" },
+    { "id": "xnms", "name": "Lap A", "stateObject": "specialties" },
+    { "id": "pli", "name": "Lap B", "stateObject": "specialties" }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "monitors": [
+    { "id": "4K", "name": "4K", "stateObject": "monitors" },
+    { "id": "VisioPro", "name": "VisionPro", "stateObject": "monitors" },
+    { "id": "VisionElect", "name": "VisionElect", "stateObject": "monitors" }
+  ]
+}

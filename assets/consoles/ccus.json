@@ -1,0 +1,10 @@
+{
+  "cameras": [
+    { "id": "1688", "name": "1688", "stateObject": "ccus" },
+    { "id": "1588", "name": "1588", "stateObject": "ccus" },
+    { "id": "Precision AC", "name": "Precision AC", "stateObject": "ccus" },
+    { "id": "1488", "name": "1488", "stateObject": "ccus" },
+    { "id": "1288", "name": "1288", "stateObject": "ccus" },
+    { "id": "1188", "name": "1188", "stateObject": "ccus" }
+  ]
+}
