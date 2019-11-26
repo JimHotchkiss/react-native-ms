@@ -1,0 +1,28 @@
+{
+  "sixteenParams": [
+    "Shutter Mode",
+    "Shutter Level",
+    "Area",
+    "Speed",
+    "Photometry Mode",
+    "Photometry Peak/Avg",
+    "S Gamma",
+    "BG Gamma",
+    "MPED",
+    "BG Point",
+    "R Knee Slope",
+    "R knee Point",
+    "Enhance",
+    "Chroma",
+    "B Gain",
+    "B Hue",
+    "R Gain",
+    "R Hue",
+    "ENV Gain Mode",
+    "ENV Manual Gain",
+    "ENV Level",
+    "ENV BG Offset",
+    "ENV Gamma",
+    "ENV Max Gain"
+  ]
+}

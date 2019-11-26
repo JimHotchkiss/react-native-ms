@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import UserButton from "./components/UserButton";
 import UserPicks from "./components/UserPicks";
-import ShowSettings from "./components/ShowSettings";
+import Parameters from "./components/Parameters";
 import { Header } from "react-native-elements";
 
 class App extends Component {
@@ -31,6 +31,7 @@ class App extends Component {
     const monitors = monitorData.monitors;
     const specialtyData = require("./assets/consoles/specialties.json");
     const specialties = specialtyData.specialties;
+    const sixteenSettings = require("./assets/settings/sixteen.json");
 
     const usersPick = item => {
       const picks = this.state.userPicks.slice();
@@ -70,6 +71,14 @@ class App extends Component {
       );
     };
 
+    const parameterView = () => {
+      if (this.state.userPicks[0] === "1688") {
+        return <Parameters settings={sixteenSettings} />;
+      } else {
+        return <Text>Legacy </Text>;
+      }
+    };
+
     const { showSettings } = this.state;
     return (
       <ImageBackground
@@ -79,7 +88,11 @@ class App extends Component {
         <Header
           leftComponent={{ icon: "menu", color: "#fff" }}
           centerComponent={{ text: "Money Settings", style: { color: "#fff" } }}
-          rightComponent={{ icon: "home", color: "#fff" }}
+          rightComponent={{
+            icon: "home",
+            color: "#fff",
+            onPress: () => alert("sup")
+          }}
           containerStyle={{
             backgroundColor: "#000",
             opacity: 0.6
@@ -89,7 +102,7 @@ class App extends Component {
           {userPicksArray.length ? userPicksArray : <Text>User Picks</Text>}
         </View>
 
-        {showSettings ? <ShowSettings /> : buttonView()}
+        {showSettings ? parameterView() : buttonView()}
       </ImageBackground>
     );
   }

@@ -7,11 +7,6 @@ const ShowSettings = props => {
       <View style={styles.settingsInnerView}>
         <Text>ShowSettings</Text>
       </View>
-      <TouchableOpacity style={styles.resetButton}>
-        <View>
-          <Text style={styles.resetText}>Reset</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
